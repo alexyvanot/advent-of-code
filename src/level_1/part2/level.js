@@ -76,5 +76,33 @@ let max = getMaxNumber(sumOfAllGroups);
 
 // On affiche le résultat
 // Output: 68787
-console.log(max);
+// console.log(max);
+
+/* PART 2 */
+
+// Fonction qui retourne les 3 plus grands chiffres du tableau dans une array
+function getThreeMaxNumbers(numbers) {
+    let max = [];
+    for (let i = 0; i < 3; i++) {
+        let maxNumber = getMaxNumber(numbers);
+        max.push(maxNumber);
+        numbers.splice(numbers.indexOf(maxNumber), 1);
+    }
+    return max;
+}
+
+// Fonction qui retourne l'addition de ses éléments
+function sum(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum;    
+}
+
+console.log(sum(getThreeMaxNumbers(sumOfAllGroups)));
+
+
+
+
 
