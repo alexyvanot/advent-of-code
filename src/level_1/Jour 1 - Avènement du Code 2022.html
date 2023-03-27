@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://adventofcode.com/2022/day/1 -->
+<html lang="en-us" class=" lpnjddqss idc0_346"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title _msttexthash="560196" _msthash="0">Jour 1 - Avènement du Code 2022</title>
+<!--[if lt IE 9]><script src="/static/html5.js"></script><![endif]-->
+<link href="./Jour 1 - Avènement du Code 2022_files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./Jour 1 - Avènement du Code 2022_files/style.css">
+<link rel="stylesheet alternate" type="text/css" href="./Jour 1 - Avènement du Code 2022_files/highcontrast.css" title="High Contrast">
+<link rel="shortcut icon" href="https://adventofcode.com/favicon.png">
+<script async="" src="./Jour 1 - Avènement du Code 2022_files/analytics.js.télécharger"></script><script>window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});</script>
+</head><!--
+
+
+
+
+Oh, hello!  Funny seeing you here.
+
+I appreciate your enthusiasm, but you aren't going to find much down here.
+There certainly aren't clues to any of the puzzles.  The best surprises don't
+even appear in the source until you unlock them for real.
+
+Please be careful with automated requests; I'm not a massive company, and I can
+only take so much traffic.  Please be considerate so that everyone gets to play.
+
+If you're curious about how Advent of Code works, it's running on some custom
+Perl code. Other than a few integrations (auth, analytics, social media), I
+built the whole thing myself, including the design, animations, prose, and all
+of the puzzles.
+
+The puzzles are most of the work; preparing a new calendar and a new set of
+puzzles each year takes all of my free time for 4-5 months. A lot of effort
+went into building this thing - I hope you're enjoying playing it as much as I
+enjoyed making it for you!
+
+If you'd like to hang out, I'm @ericwastl on Twitter.
+
+- Eric Wastl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+<body>
+<header><div><h1 class="title-global"><a href="https://adventofcode.com/" _msttexthash="301600" _msthash="1">Avènement du code</a></h1><nav><ul><li><a href="https://adventofcode.com/2022/about" _msttexthash="147342" _msthash="2">[À propos]</a></li><li><a href="https://adventofcode.com/2022/events" _msttexthash="234325" _msthash="3">[Événements]</a></li><li><a href="https://teespring.com/stores/advent-of-code" target="_blank" _msttexthash="155740" _msthash="4">[Boutique]</a></li><li><a href="https://adventofcode.com/2022/settings" _msttexthash="224380" _msthash="5">[Paramètres]</a></li><li><a href="https://adventofcode.com/2022/auth/logout" _msttexthash="243971" _msthash="6">[Déconnexion]</a></li></ul></nav><div class="user" _msttexthash="77519" _msthash="7">Alexis</div></div><div><h1 class="title-event">&nbsp;<span class="title-event-wrap" _msttexthash="128453" _msthash="8">{'année':</span><a href="https://adventofcode.com/2022" _msttexthash="21892" _msthash="9">2022</a><span class="title-event-wrap">}</span></h1><nav><ul><li><a href="https://adventofcode.com/2022" _msttexthash="198328" _msthash="10">[Calendrier]</a></li><li><a href="https://adventofcode.com/2022/support" _msttexthash="65312" _msthash="11">[AoC++]</a></li><li><a href="https://adventofcode.com/2022/sponsors" _msttexthash="312936" _msthash="12">[Commanditaires]</a></li><li><a href="https://adventofcode.com/2022/leaderboard" _msttexthash="201760" _msthash="13">[Classement]</a></li><li><a href="https://adventofcode.com/2022/stats" _msttexthash="262665" _msthash="14">[Statistiques]</a></li></ul></nav></div></header>
+
+<div id="sidebar">
+<div id="sponsor"><div class="quiet" _msttexthash="7415460" _msthash="15">Nos <a href="https://adventofcode.com/2022/sponsors" _istranslated="1">sponsors</a> contribuent à rendre possible l’avènement du Code :</div><div class="sponsor" _msttexthash="87098726" _msthash="16"><a href="https://ahrefs.com/" target="_blank" onclick="if(ga)ga(&#39;send&#39;,&#39;event&#39;,&#39;sponsor&#39;,&#39;sidebar&#39;,this.href);" rel="noopener" _istranslated="1">Ahrefs</a> - Travaillez sur le prochain moteur de recherche généraliste, un robot d’exploration de classe mondiale et de vraies données volumineuses. Tirer parti d’un matériel de pointe et de technologies de programmation avancées. De n’importe où dans le monde. OCaml, ReasonML, Dlang, C++</div></div>
+</div><!--/sidebar-->
+
+<main>
+<article class="day-desc"><h2 _msttexthash="809133" _msthash="17">--- Jour 1 : Comptage des calories ---</h2><p _msttexthash="90278045" _msthash="18">Les rennes du Père Noël mangent généralement de la nourriture ordinaire pour les rennes, mais ils ont besoin de beaucoup <a href="https://adventofcode.com/2018/day/25" _istranslated="1">d’énergie magique</a> pour livrer des cadeaux à Noël. Pour cela, leur collation préférée est un type spécial de <em class="star" _istranslated="1">carambole</em> qui ne pousse que dans les profondeurs de la jungle. Les elfes vous ont emmené dans leur expédition annuelle dans le bosquet où poussent les fruits.</p>
+<p _msttexthash="51720110" _msthash="19">Pour fournir suffisamment d’énergie magique, l’expédition doit récupérer un minimum de <em class="star" _istranslated="1">cinquante étoiles</em> avant le 25 décembre. Bien que les elfes vous assurent que le bosquet a beaucoup de fruits, vous décidez de prendre tous les fruits que vous voyez le long du chemin, juste au cas où.</p>
+<p _msttexthash="43376203" _msthash="20">Collectionnez les étoiles en résolvant des énigmes. Deux puzzles seront disponibles chaque jour dans le calendrier de l’Avent; Le deuxième puzzle est débloqué lorsque vous terminez le premier. Chaque puzzle accorde <em class="star" _istranslated="1">une étoile</em>. Bonne chance!</p>
+<p _msttexthash="137448129" _msthash="21">La jungle doit être trop envahie par la végétation et difficile à naviguer dans des véhicules ou à accéder depuis les airs; l’expédition des Elfes se fait traditionnellement à pied. Au fur et à mesure que vos bateaux approchent de la terre, les elfes commencent à faire l’inventaire de leurs fournitures. Une considération importante est la nourriture - en particulier, le nombre de <em _istranslated="1">calories</em> que chaque elfe transporte (votre entrée de puzzle).</p>
+<p _msttexthash="96261763" _msthash="22">Les Elfes écrivent à tour de rôle le nombre de calories contenues dans les différents repas, collations, rations, etc. qu’ils ont apportés avec eux, un article par ligne<span title="By &quot;etc&quot;, you&#39;re pretty sure they just mean &quot;more snacks&quot;." _istranslated="1">.</span> Chaque Elfe sépare son propre inventaire de l’inventaire de l’Elfe précédent (le cas échéant) par une ligne blanche.</p>
+<p _msttexthash="13921427" _msthash="23">Par exemple, supposons que les Elfes finissent d’écrire les calories de leurs objets et se retrouvent avec la liste suivante :</p>
+<pre><code>1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000
+</code></pre>
+<p _msttexthash="3538054" _msthash="24">Cette liste représente les calories de la nourriture portée par cinq elfes:</p>
+<ul>
+<li><font _mstmutation="1" _msttexthash="4329585" _msthash="25">Le premier Elfe transporte de la nourriture avec , et des calories, un total de calories.</font><code>1000</code><code>2000</code><code>3000</code><code><em>6000</em></code></li>
+<li><font _mstmutation="1" _msttexthash="2088775" _msthash="26">Le deuxième elfe transporte un aliment avec des calories.</font><code><em>4000</em></code></li>
+<li><font _mstmutation="1" _msttexthash="4505787" _msthash="27">Le troisième Elfe transporte de la nourriture avec et des calories, un total de calories.</font><code>5000</code><code>6000</code><code><em>11000</em></code></li>
+<li><font _mstmutation="1" _msttexthash="4576858" _msthash="28">Le quatrième Elfe transporte de la nourriture avec , et des calories, un total de calories.</font><code>7000</code><code>8000</code><code>9000</code><code><em>24000</em></code></li>
+<li><font _mstmutation="1" _msttexthash="2160015" _msthash="29">Le cinquième Elfe transporte un aliment avec des calories.</font><code><em>10000</em></code></li>
+</ul>
+<p><font _mstmutation="1" _msttexthash="102276382" _msthash="30">Au cas où les Elfes auraient faim et auraient besoin de collations supplémentaires, ils ont besoin de savoir à quel Elfe demander : ils aimeraient savoir combien de Calories sont transportées par l’Elfe transportant le <em _mstmutation="1" _istranslated="1">plus</em> de Calories. Dans l’exemple ci-dessus, c’est </font><em><code>24000</code></em><font _mstmutation="1" _msttexthash="694837" _msthash="31"> (porté par le quatrième Elfe).</font></p>
+<p _msttexthash="7667127" _msthash="32">Trouvez l’elfe transportant le plus de calories. <em _istranslated="1">Combien de calories totales cet elfe transporte-t-il?</em></p>
+</article>
+<p _msttexthash="1576497" _msthash="33">Pour commencer, <a href="https://adventofcode.com/2022/day/1/input" target="_blank" _istranslated="1">obtenez votre entrée de puzzle</a>.</p>
+<form method="post" action="https://adventofcode.com/2022/day/1/answer"><input type="hidden" name="level" value="1"><p><font _mstmutation="1" _msttexthash="139516" _msthash="35">Répondre: </font><input type="text" name="answer" autocomplete="off" control-id="ControlID-1"> <input type="submit" value="[Soumettre]" control-id="ControlID-2" _mstvalue="111839" _msthash="34"></p></form>
+<p><font _mstmutation="1" _msttexthash="456261" _msthash="36">Vous pouvez également </font><span class="share"><font _mstmutation="1" _msttexthash="132509" _msthash="37">[Partager</font><span class="share-content" _msttexthash="353977" _msthidden="1" _msthash="38">on
+  <a href="https://twitter.com/intent/tweet?text=%22Calorie+Counting%22+%2D+Day+1+%2D+Advent+of+Code+2022&amp;url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F1&amp;related=ericwastl&amp;hashtags=AdventOfCode" target="_blank">Twitter</a>
+  <a href="javascript:void(0);" onclick="var mastodon_instance=prompt(&#39;Mastodon Instance / Server Name?&#39;); if(typeof mastodon_instance===&#39;string&#39; &amp;&amp; mastodon_instance.length){this.href=&#39;https://&#39;+mastodon_instance+&#39;/share?text=%22Calorie+Counting%22+%2D+Day+1+%2D+Advent+of+Code+2022+%23AdventOfCode+https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F1&#39;}else{return false;}" target="_blank">Mastodon</a></span>]</span><font _mstmutation="1" _msttexthash="129909" _msthash="39"> ce puzzle.</font></p>
+</main>
+
+<!-- ga -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69522494-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<!-- /ga -->
+
+</body></html>
