@@ -7,10 +7,6 @@ const lignes = contenuFichier.split('\n');
 
 /**
  * Permet de convertir un tableau de lignes en un tableau de groupes
-<<<<<<< HEAD
-=======
- * Exemple: <URL>.img
->>>>>>> b72ed4a1e7ec98d5d04d610dc0725065134fbd95
  * @param {*} lignes 
  * @returns 
  */
