@@ -100,7 +100,14 @@ function sum(array) {
     return sum;    
 }
 
-console.log(sum(getThreeMaxNumbers(sumOfAllGroups)));
+// On récupère les 3 plus grands chiffres du tableau
+let top3 = getThreeMaxNumbers(sumOfAllGroups);
+
+// On additionne les 3 plus grands chiffres entre eux
+let sumTop3 = sum(top3);
+
+// On affiche le résultat
+console.log(sumTop3);
 
 
 
