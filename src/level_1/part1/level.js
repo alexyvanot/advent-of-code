@@ -1,13 +1,19 @@
+
+
+// O(5)
 const readline = require('readline-sync');
 const fs = require('fs');
 const path = './input.txt';
 const contenuFichier = fs.readFileSync(path, 'utf8');
-const lignes = contenuFichier.split('\n');
-// console.log(lignes);
+const lignes = contenuFichier.split('\r\n');
+console.log(lignes);
 
 /**
- * Permet de convertir un tableau de lignes en un tableau de groupes
+ * Permet de convertir un tableau 1D en un tableau 2D
  * Exemple: <URL>.img
+ * 
+ * O(
+ * 
  * @param {*} lignes 
  * @returns 
  */
@@ -70,7 +76,7 @@ let groups = formatGroups(lignes);
 
 // On récupère la somme de chaque groupe stocké dans "groups"
 let sumOfAllGroups = sumArray(groups);
-// console.log(groupSum);
+// console.log(sumOfAllGroups);
 
 // On récupère le plus grand nombre du tableau "sumOfAllGroups"
 let max = getMaxNumber(sumOfAllGroups);
