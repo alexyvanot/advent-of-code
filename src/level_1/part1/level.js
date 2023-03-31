@@ -1,19 +1,15 @@
+// O(n²) poru le pire des cas
 
-
-// O(5)
 const readline = require('readline-sync');
 const fs = require('fs');
 const path = './input.txt';
-const contenuFichier = fs.readFileSync(path, 'utf8');
-const lignes = contenuFichier.split('\r\n');
+const contenuFichier = fs.readFileSync(path, 'utf8'); // O(n)
+const lignes = contenuFichier.split('\r\n'); // O(n)
 console.log(lignes);
 
 /**
  * Permet de convertir un tableau 1D en un tableau 2D
  * Exemple: <URL>.img
- * 
- * O(
- * 
  * @param {*} lignes 
  * @returns 
  */
@@ -71,15 +67,15 @@ function sumArray(groups) {
 }
 
 // On récupère les groupes
-let groups = formatGroups(lignes);
+let groups = formatGroups(lignes); // O(n)
 // console.log(groups);
 
 // On récupère la somme de chaque groupe stocké dans "groups"
-let sumOfAllGroups = sumArray(groups);
+let sumOfAllGroups = sumArray(groups); // O(n²)
 // console.log(sumOfAllGroups);
 
 // On récupère le plus grand nombre du tableau "sumOfAllGroups"
-let max = getMaxNumber(sumOfAllGroups);
+let max = getMaxNumber(sumOfAllGroups); // O(n)
 
 // On affiche le résultat
 // Output: 68787
